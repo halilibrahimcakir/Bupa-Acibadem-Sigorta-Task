@@ -23,52 +23,52 @@ namespace InsuranceWeb.UI.Backend.Controllers
         public IActionResult Index()
         {
 
-            string conn = "User Id=INSURANCEDB;Password=test;Data Source=localhost:1521/ORCLPDB1.localdomain";
-            DataTable dt = new DataTable();
+            //string conn = "User Id=INSURANCEDB;Password=test;Data Source=localhost:1521/ORCLPDB1.localdomain";
+            //DataTable dt = new DataTable();
 
-            using (OracleConnection con = new OracleConnection(conn))
-            {
-                using (OracleCommand cmd = new OracleCommand())
-                {
+            //using (OracleConnection con = new OracleConnection(conn))
+            //{
+            //    using (OracleCommand cmd = new OracleCommand())
+            //    {
 
-                    OracleParameter oracleParameter = new OracleParameter();
-                    oracleParameter.ParameterName = "RESULTS";
-                    oracleParameter.Direction = ParameterDirection.Output;
-                    oracleParameter.OracleDbType = OracleDbType.RefCursor;
+            //        OracleParameter oracleParameter = new OracleParameter();
+            //        oracleParameter.ParameterName = "RESULTS";
+            //        oracleParameter.Direction = ParameterDirection.Output;
+            //        oracleParameter.OracleDbType = OracleDbType.RefCursor;
 
-                    cmd.Connection = con;
-                    cmd.CommandText = "SP_CUSTOM_FORVIEW";
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add(oracleParameter);
-                    con.Open();
-                    OracleDataAdapter adapter = new OracleDataAdapter(cmd);
-                    adapter.Fill(dt);
-                    con.Close();
-                }
-            }
-            List<CustomModel> list = new List<CustomModel>();
+            //        cmd.Connection = con;
+            //        cmd.CommandText = "SP_CUSTOM_FORVIEW";
+            //        cmd.CommandType = CommandType.StoredProcedure;
+            //        cmd.Parameters.Add(oracleParameter);
+            //        con.Open();
+            //        OracleDataAdapter adapter = new OracleDataAdapter(cmd);
+            //        adapter.Fill(dt);
+            //        con.Close();
+            //    }
+            //}
+            //List<CustomModel> list = new List<CustomModel>();
 
-            foreach (DataRow item in dt.Rows)
-            {
-                CustomModel customModel = new CustomModel();
+            //foreach (DataRow item in dt.Rows)
+            //{
+            //    CustomModel customModel = new CustomModel();
 
-                customModel.CustomerName = item["CustomerName"].ToString();
-                customModel.CustomerSurname = item["CustomerSurname"].ToString();
-                customModel.InsuredName = item["InsuredName"].ToString();
-                customModel.PolicyName = item["PolicyName"].ToString();
-                customModel.PolicyPrice = item["PolicyPrice"].ToString();
-                customModel.Prim = (decimal)item["Prim"];
-                customModel.AmountCount = (decimal)item["AmountCount"];
-                customModel.TotalPrice = (decimal)item["TotalPrice"];
-                customModel.ApprovingName = item["ApprovingName"].ToString();
-                customModel.PurchaseOrderStatusName = (decimal)item["PurchaseOrderStatusName"];
+            //    customModel.CustomerName = item["CustomerName"].ToString();
+            //    customModel.CustomerSurname = item["CustomerSurname"].ToString();
+            //    customModel.InsuredName = item["InsuredName"].ToString();
+            //    customModel.PolicyName = item["PolicyName"].ToString();
+            //    customModel.PolicyPrice = item["PolicyPrice"].ToString();
+            //    customModel.Prim = (decimal)item["Prim"];
+            //    customModel.AmountCount = (decimal)item["AmountCount"];
+            //    customModel.TotalPrice = (decimal)item["TotalPrice"];
+            //    customModel.ApprovingName = item["ApprovingName"].ToString();
+            //    customModel.PurchaseOrderStatusName = (decimal)item["PurchaseOrderStatusName"];
 
 
-                list.Add(customModel);
-            }
-            var model = list;
+            //    list.Add(customModel);
+            //}
+            //var model = list;
 
-            return View(model);
+            return View();
         }
         public IActionResult List()
         {

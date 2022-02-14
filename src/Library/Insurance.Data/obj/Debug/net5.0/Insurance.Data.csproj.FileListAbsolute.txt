@@ -2,6 +2,7 @@ C:\Sandbox\Insurance\src\Library\Insurance.Data\bin\Debug\net5.0\Insurance.Data.
 C:\Sandbox\Insurance\src\Library\Insurance.Data\bin\Debug\net5.0\Insurance.Data.dll
 C:\Sandbox\Insurance\src\Library\Insurance.Data\bin\Debug\net5.0\ref\Insurance.Data.dll
 C:\Sandbox\Insurance\src\Library\Insurance.Data\bin\Debug\net5.0\Insurance.Data.pdb
+C:\Sandbox\Insurance\src\Library\Insurance.Data\obj\Debug\net5.0\Insurance.Data.csproj.AssemblyReference.cache
 C:\Sandbox\Insurance\src\Library\Insurance.Data\obj\Debug\net5.0\Insurance.Data.GeneratedMSBuildEditorConfig.editorconfig
 C:\Sandbox\Insurance\src\Library\Insurance.Data\obj\Debug\net5.0\Insurance.Data.AssemblyInfoInputs.cache
 C:\Sandbox\Insurance\src\Library\Insurance.Data\obj\Debug\net5.0\Insurance.Data.AssemblyInfo.cs

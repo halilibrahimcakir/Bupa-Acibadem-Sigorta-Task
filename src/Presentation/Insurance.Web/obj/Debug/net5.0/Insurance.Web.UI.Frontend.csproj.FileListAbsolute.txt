@@ -93,6 +93,7 @@ C:\Sandbox\Insurance\src\Presentation\Insurance.Web\bin\Debug\net5.0\zh-Hans\Mic
 C:\Sandbox\Insurance\src\Presentation\Insurance.Web\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Sandbox\Insurance\src\Presentation\Insurance.Web\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Sandbox\Insurance\src\Presentation\Insurance.Web\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
+C:\Sandbox\Insurance\src\Presentation\Insurance.Web\obj\Debug\net5.0\Insurance.Web.UI.Frontend.csproj.AssemblyReference.cache
 C:\Sandbox\Insurance\src\Presentation\Insurance.Web\obj\Debug\net5.0\Insurance.Web.UI.Frontend.GeneratedMSBuildEditorConfig.editorconfig
 C:\Sandbox\Insurance\src\Presentation\Insurance.Web\obj\Debug\net5.0\Insurance.Web.UI.Frontend.AssemblyInfoInputs.cache
 C:\Sandbox\Insurance\src\Presentation\Insurance.Web\obj\Debug\net5.0\Insurance.Web.UI.Frontend.AssemblyInfo.cs
