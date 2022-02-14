@@ -1,0 +1,56 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "cd9a64ac-85d4-4850-851e-97e9904e5e66": {
+      "ProjectGuid": "cd9a64ac-85d4-4850-851e-97e9904e5e66",
+      "DisplayName": "Insurance.Web",
+      "ColorIndex": 0
+    },
+    "21f93cd0-4ced-43e0-9237-9b63d85111bd": {
+      "ProjectGuid": "21f93cd0-4ced-43e0-9237-9b63d85111bd",
+      "DisplayName": "Insurance.WebApi",
+      "ColorIndex": 1
+    },
+    "a93e7038-a068-4dbc-ae5d-bba76dd277dd": {
+      "ProjectGuid": "a93e7038-a068-4dbc-ae5d-bba76dd277dd",
+      "DisplayName": "Insurance.Data",
+      "ColorIndex": 2
+    },
+    "fa09f79e-1dd3-467a-bb25-23a29cfe3d02": {
+      "ProjectGuid": "fa09f79e-1dd3-467a-bb25-23a29cfe3d02",
+      "DisplayName": "Insurance.Services",
+      "ColorIndex": 3
+    },
+    "897759cb-3ca2-470a-922f-9b61f1c4dbdf": {
+      "ProjectGuid": "897759cb-3ca2-470a-922f-9b61f1c4dbdf",
+      "DisplayName": "Insurance.Business",
+      "ColorIndex": 4
+    },
+    "5be3ccbd-b2dc-43f5-ae10-1e411fa52f58": {
+      "ProjectGuid": "5be3ccbd-b2dc-43f5-ae10-1e411fa52f58",
+      "DisplayName": "Insurance.Models",
+      "ColorIndex": 5
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "cff58795-a8af-47d4-880f-9ad01c459db1": {
+      "ProjectGuid": "cff58795-a8af-47d4-880f-9ad01c459db1",
+      "DisplayName": "Insurance.Web",
+      "ColorIndex": 6
+    },
+    "919fd655-f067-4ba2-b932-d926e85dd6b4": {
+      "ProjectGuid": "919fd655-f067-4ba2-b932-d926e85dd6b4",
+      "DisplayName": "Script Documents",
+      "ColorIndex": 7
+    },
+    "0d965ffd-dbb3-4371-a0ca-de9b71c68e62": {
+      "ProjectGuid": "0d965ffd-dbb3-4371-a0ca-de9b71c68e62",
+      "DisplayName": "InsuranceWeb.UI.Backend",
+      "ColorIndex": 8
+    }
+  },
+  "NextColorIndex": 9
+}

@@ -1,0 +1,120 @@
+﻿@using Insurance.Web.Models
+@model PurchaseOrderModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="checkout-seconder-form">
+
+    <h3>Satın Alma Formu</h3>
+    @using (Html.BeginForm("SavePurchase", "Checkout", FormMethod.Post, new { @id = "frmPurchase", @class = "row g-3" }))
+    {
+        <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">Ayakta Tedavi</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">1000<small class="text-muted fw-light">/TL</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>%70 Prim</li>
+                        <li>1 Yıl Anlaşmalı</li>
+                        <li>Hastanelerde geçerli</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">Yatarak Tedavi</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">500<small class="text-muted fw-light">/TL</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>%20 Prim</li>
+                        <li>1 Yıl Anlaşmalı</li>
+                        <li>Hastanelerde geçerli</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">Her İki Tedavi</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">1300<small class="text-muted fw-light">/TL</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>+%5 Her ikisinden fazla</li>
+                        <li>1 Yıl Hastanelerde geçerli</li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-auto">
+                <label class="form-label">Paket Seçimi</label>
+                @Html.DropDownListFor(x => x.PolicyId,new []{new SelectListItem{Text="Ayakta Tedavi",Value="1"},new SelectListItem{Text="Yatarak Tedavi",Value="2"},new SelectListItem{Text="Her İki Tedavi",Value="3"}},new{@class="form-select", @placeholder="Paket seçimi yapınız",@required = "required"})
+            </div>
+            <div class="col-md-auto">
+                <label class="form-label">Ödeme Türü</label>
+                @Html.DropDownListFor(x => x.PAYMENTTYPEID,new []{new SelectListItem{Text="Peşin",Value="1"},new SelectListItem{Text="Taksit",Value="2"}},new{@id="payment",@class="form-select", @placeholder="Ödeme seçimi yapınız",@required = "required"})
+            </div>
+            <div class="col-md-auto">
+                <label id="lblPayment" class="form-label">Ödeme Türü</label>
+                @Html.DropDownListFor(x => x.INSTALLMENTAMOUNTID,new []{new SelectListItem{Text="3 Taksit",Value="1"},new SelectListItem{Text="6 Taksit",Value="2"}},new{@id="amount",@class="form-select",@hide = "hide", @disable="disable", @placeholder="Ödeme seçimi yapınız",@required = "required"})
+            </div>
+        </div>
+        <div class="form-floating">
+            <label for="floatingTextarea">Bir sonraki sayfada sağlık durumunuza göre fiyatlar değişiklik gösterebilir</label>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Müşteri Numarası</label>
+            @Html.TextBoxFor(x=> x.CUSTOMERID, new{@class = "form-control",@placeholder =@Model.CUSTOMERID,@readonly="readonly",@required = "required"})
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Sigortalı Numarası</label>
+            @Html.TextBoxFor(x=> x.InsuredRegistrationId, new{@class = "form-control",@placeholder =@Model.InsuredRegistrationId,@readonly="readonly",@required = "required"})
+        </div>
+        <div class="col-md-12">
+            <input class="btn btn-primary" type="button" id="btnSave" value="Kaydet" onclick="sendData();">
+        </div>
+    }
+</div>
+
+
+<script type="text/javascript">
+
+    $("#payment").change(function(){
+        var status = this.value;
+      if(status=="1"){
+        document.getElementById("lblPayment").disabled = true;
+                document.getElementById("lblPayment").hidden = true;
+                      document.getElementById("lblPayment").readonly = true;
+
+      }
+        else if(status=="2"){
+      document.getElementById("lblPayment").disabled = false;
+                document.getElementById("lblPayment").hidden = false;
+        }
+
+     });
+</script>
+
+<script>
+    function sendData() {
+        var sendForm = $("#frmPurchase").serialize();
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("SavePurchase","Checkout")',
+            data: sendForm,
+            success: function(result) {
+                 if(result.status === true)
+            window.location.href = result.redirectUrl;
+            }
+        });
+    }
+</script>

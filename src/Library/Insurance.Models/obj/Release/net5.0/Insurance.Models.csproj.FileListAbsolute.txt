@@ -1,0 +1,12 @@
+C:\Sandbox\Insurance\src\Library\Insurance.Models\bin\Release\net5.0\Insurance.Models.deps.json
+C:\Sandbox\Insurance\src\Library\Insurance.Models\bin\Release\net5.0\Insurance.Models.dll
+C:\Sandbox\Insurance\src\Library\Insurance.Models\bin\Release\net5.0\ref\Insurance.Models.dll
+C:\Sandbox\Insurance\src\Library\Insurance.Models\bin\Release\net5.0\Insurance.Models.pdb
+C:\Sandbox\Insurance\src\Library\Insurance.Models\obj\Release\net5.0\Insurance.Models.csproj.AssemblyReference.cache
+C:\Sandbox\Insurance\src\Library\Insurance.Models\obj\Release\net5.0\Insurance.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Sandbox\Insurance\src\Library\Insurance.Models\obj\Release\net5.0\Insurance.Models.AssemblyInfoInputs.cache
+C:\Sandbox\Insurance\src\Library\Insurance.Models\obj\Release\net5.0\Insurance.Models.AssemblyInfo.cs
+C:\Sandbox\Insurance\src\Library\Insurance.Models\obj\Release\net5.0\Insurance.Models.csproj.CoreCompileInputs.cache
+C:\Sandbox\Insurance\src\Library\Insurance.Models\obj\Release\net5.0\Insurance.Models.dll
+C:\Sandbox\Insurance\src\Library\Insurance.Models\obj\Release\net5.0\ref\Insurance.Models.dll
+C:\Sandbox\Insurance\src\Library\Insurance.Models\obj\Release\net5.0\Insurance.Models.pdb

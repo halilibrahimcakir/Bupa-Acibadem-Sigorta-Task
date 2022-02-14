@@ -1,0 +1,72 @@
+﻿@model CustomerModel
+@{
+    Layout = "_Layout";
+}
+
+<div id="checkout-first-form">
+    <h3>Kayıt Formu</h3>
+    @using (Html.BeginForm("SaveCustomer", "Checkout", FormMethod.Post, new { @id = "frmCustomer", @class = "row g-3" }))
+    {
+        <div class="col-md-6">
+            <label class="form-label">Ad</label>
+            @Html.TextBoxFor(x=> x.NAME, new{@class = "form-control",@placeholder="Ad",@required = "required"})
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Soyad</label>
+            @Html.TextBoxFor(x=> x.SURNAME, new{@class = "form-control",@placeholder="Soyad",@required = "required"})
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Cinsiyet</label>
+            @Html.DropDownListFor(x => x.GENDER,new []{new SelectListItem{Text="Erkek",Value="Erkek"},new SelectListItem{Text="Kadın",Value="Kadın"}},new{@class="form-select",@placeholder="Cinsiyet",@required = "required"})
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Doğum Tarihi</label>
+            @Html.DropDownListFor(x => x.BIRTHDATE,new []{new SelectListItem{Text="2003",Value="01/01/2003"},new SelectListItem{Text="2002",Value="01/01/2002"},new SelectListItem{Text="2001",Value="01/01/2001"}},new{@class="form-select",@placeholder="Cinsiyet",@required = "required"})
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Uyruk</label>
+            @Html.DropDownListFor(x=> x.NATIONALITY, new[]{new SelectListItem{Text="Türkiye",Value="Türkiye"},new SelectListItem{Text="Kıbrıs",Value="Kıbris"}},new{@class="form-select",@placeholder="Uyruk",@required = "required"})
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Şehir</label>
+            @Html.DropDownListFor(x=> x.ADRESS, new[]{new SelectListItem{Text="İstanbul",Value="İstanbul"},new SelectListItem{Text="Ankara",Value="Ankara"},new SelectListItem{Text="Tekirdağ",Value="Tekirdağ"},new SelectListItem{Text="Edirne",Value="Edirne"}},new{@class="form-select",@placeholder="Şehir",@required = "required"})
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Kimlik Numarası</label>
+            @Html.TextBoxFor(x=> x.IDENTIFICATIONNUMBER, new{@class = "form-control",@placeholder="Kimlik Numarası",@required = "required"})
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Telefon Numarası</label>
+            @Html.TextBoxFor(x=> x.PHONE, new{@class = "form-control",@placeholder="Telefon Numarası",@required = "required"})
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Email</label>
+            @Html.TextBoxFor(x=> x.EMAIL, new{@class = "form-control",@placeholder="Email",@required = "required"})
+        </div>
+        <div class="col-6">
+            <label for="inputAddress" class="form-label">Addres</label>
+            @Html.TextBoxFor(x=> x.ADRESS, new{@class = "form-control",@placeholder="Adres",@required = "required"})
+        </div>
+        <div class="col-md-12">
+            <input class="btn btn-primary" type="button" id="btnSave" value="Kaydet" onclick="sendData();">
+        </div>
+    }
+</div>
+
+
+<script>
+    function sendData() {
+        var sendForm = $("#frmCustomer").serialize();
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("SaveCustomer","Checkout")',
+            data: sendForm,
+            success: function(result) {
+                 if(result.status === true)
+            window.location.href = result.redirectUrl;
+            }
+        });
+    }
+</script>
+
